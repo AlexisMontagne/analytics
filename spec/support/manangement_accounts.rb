@@ -1,0 +1,2 @@
+MANAGEMENT_ACCOUNTS = '{"kind":"analytics#accounts","username":"email_address","totalResults":1,"startIndex":1,"itemsPerPage":1000,"items":[{"id":"account_id","kind":"analytics#account","selfLink":"https://www.googleapis.com/analytics/v3/management/accounts/account_id","name":"Account name","created":"2013-06-05T11:19:31.774Z","updated":"2013-07-09T15:35:30.823Z","childLink":{"type":"analytics#webproperties","href":"https://www.googleapis.com/analytics/v3/management/accounts/xxxx/webproperties"}}]}'
+
