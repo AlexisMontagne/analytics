@@ -5,7 +5,7 @@ module Analytics
     extend Forwardable
 
     def oauth_client
-      @client ||= OAuth2::Client.new(
+      @oauth_client ||= OAuth2::Client.new(
         consumer_key, 
         consumer_secret,
         :site => 'https://accounts.google.com',

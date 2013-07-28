@@ -5,6 +5,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Alexis Montagne"]
   gem.email         = ["alexis.montagne@gmail.com"]
   gem.description   = %q{A Ruby interface to the Google Analytics API}
+  gem.summary       = %q{Basic implementation of an ruby interface to the Analytics API}
   gem.homepage      = "http://www.github.com/AlexisMontagne/analytics"
 
   gem.files         = `git ls-files`.split($\)

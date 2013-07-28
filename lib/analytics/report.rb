@@ -37,10 +37,11 @@ module Analytics
     end
 
     def to_ga(array)
-      array.map { |x| 'ga:' + x.to_s.camelize(:lower) }.join(",")
+      array.map { |x| 'ga:' + x.to_s.to_camelcase(:lower) }.join(",")
     end
 
     def method_missing(m, *args, &block)
+      args.flatten!
       if METRICS.include? m.to_sym
         get(args[0],args[1], [m.to_sym])
       elsif m.to_s.split('_by_').length.eql? 2
