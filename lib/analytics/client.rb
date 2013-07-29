@@ -10,6 +10,14 @@ module Analytics
     def accounts
      @accounts ||= request_accounts
     end
+    
+    def web_properties
+      accounts.map(&:web_properties).flatten
+    end
+
+    def profiles
+      web_properties.map(&:profiles).flatten
+    end
 
     def flush!
       @accounts = nil

@@ -3,7 +3,7 @@ require "spec_helper"
 describe Analytics::Report do
   context '.get' do
     before :each do
-      @report = Analytics::Report.new('1', nil)
+      @report = Analytics::Report.new('1', '2')
       @report.stubs(:get).returns(:bar)
     end
     it "should forwarsd to get with a metrics name" do

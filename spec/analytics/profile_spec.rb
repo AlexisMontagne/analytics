@@ -9,7 +9,7 @@ describe Analytics::Profile do
          "accountId" => 'baz',
          "websiteUrl" => 'http://www.gmail.com',
          "webPropertyId" => 'b'},
-         nil)
+         '1')
       client.report.stubs(:foo).returns(:bar)
       client.foo.should == :bar
     end
