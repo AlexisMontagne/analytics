@@ -17,6 +17,7 @@ Gem::Specification.new do |gem|
 
   gem.add_runtime_dependency("multi_json")
   gem.add_runtime_dependency("oauth2")
+  gem.add_runtime_dependency("oauth")
   gem.add_development_dependency("rspec")
   gem.add_development_dependency("rake")
   gem.add_development_dependency("mocha")

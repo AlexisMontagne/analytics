@@ -14,13 +14,13 @@ module Analytics
       )
     end
 
-    def access_token(token)
+    def access_token(token, opts = {})
       if token.nil?
         raise Analytics::Error::NoAccessTokenProvided
       elsif token.is_a? OAuth2::AccessToken
         token
       else
-         OAuth2::AccessToken.new(oauth_client, token)
+         OAuth2::AccessToken.new(oauth_client, token, opts)
       end
     end
   end
