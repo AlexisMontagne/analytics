@@ -20,7 +20,9 @@ module Analytics
     end
 
     def get(start_date, end_date, metrics, dimensions = [])
-      Analytics::Request.new(Analytics::BASE_URL, get_url(start_date, end_date, metrics, dimensions), @access_token).response["rows"].map do |row|
+      response = Analytics::Request.new(Analytics::BASE_URL, get_url(start_date, end_date, metrics, dimensions), @access_token).response
+      return nil unless response["rows"]
+      response["rows"].map do |row|
         @renderer.render(row, metrics, dimensions)
       end 
     end
