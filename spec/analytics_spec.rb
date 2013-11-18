@@ -41,23 +41,4 @@ describe Analytics do
 
     Analytics.client.foo.should == :bar
   end
-
-  context '.access_token' do
-    it "return the token if it's a access_token" do
-      t = OAuth2::AccessToken.new(Analytics.oauth_client, 'foo-bar')
-      Analytics.access_token(t).should == t
-    end
-
-    it "return the token build on the token given" do
-      t = 'foo-bar'
-      result = Analytics.access_token(t)
-      result.class.should == OAuth2::AccessToken
-      result.token.should == t
-    end
-
-    it "throw an error if no token provided" do
-      expect { Analytics.access_token(nil) }.to raise_error(Analytics::Error::NoAccessTokenProvided)
-    end
-  end 
-
 end

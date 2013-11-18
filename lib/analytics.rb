@@ -20,7 +20,6 @@ module Analytics
 
   class << self
     include Analytics::Configurable
-    include Analytics::OAuth2
     
     def client
       @client ||= Analytics::Client.new(options.fetch(:default_access_token))
