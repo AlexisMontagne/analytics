@@ -5,8 +5,8 @@ module Analytics
     class << self
       def oauth_client
         @oauth_client ||= ::OAuth2::Client.new(
-          consumer_key, 
-          consumer_secret,
+          Analytics.consumer_key, 
+          Analytics.consumer_secret,
           :site => 'https://accounts.google.com',
           :authorize_url => '/o/oauth2/auth',
           :token_url => '/o/oauth2/token'

@@ -5,11 +5,13 @@ module Analytics
   class OAuth
     class << self
       def oauth_consumer
-        @consumer ||= ::OAuth::Consumer.new(Analytics.consumer_key, Analytics.consumer_secret, {
-          :site => 'https://www.google.com',
-          :request_token_path => '/accounts/OAuthGetRequestToken',
-          :access_token_path => '/accounts/OAuthGetAccessToken',
-          :authorize_path => '/accounts/OAuthAuthorizeToken'
+        @consumer ||= ::OAuth::Consumer.new(
+          Analytics.consumer_key, 
+          Analytics.consumer_secret, {
+            :site => 'https://www.google.com',
+            :request_token_path => '/accounts/OAuthGetRequestToken',
+            :access_token_path => '/accounts/OAuthGetAccessToken',
+            :authorize_path => '/accounts/OAuthAuthorizeToken'
         })
       end
 
