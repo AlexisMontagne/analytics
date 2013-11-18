@@ -8,7 +8,7 @@ module Analytics
 
     def request
       access_token.get(full_path).body
-    rescue OAuth2::Error
+    rescue ::OAuth2::Error
       raise Analytics::Error::PermissionInsufficient
     end
 

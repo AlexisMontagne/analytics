@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe Analytics::Request do
-  let(:incorrect_token) { OAuth2::AccessToken.new(OAuth2::Client.new('1','1'),'123') }
+  let(:incorrect_token) { ::OAuth2::AccessToken.new(::OAuth2::Client.new('1','1'),'123') }
   let(:sample_request) { Analytics::Request.new('http://assets.up-fluence.com', 'test.json', incorrect_token) }
   
   context ".full_path" do 

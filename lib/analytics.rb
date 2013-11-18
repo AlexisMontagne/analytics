@@ -1,5 +1,6 @@
 require "analytics/version"
 require "analytics/configurable"
+require "analytics/oauth2"
 require "analytics/oauth"
 require "analytics/client"
 require "analytics/account"
@@ -19,14 +20,14 @@ module Analytics
 
   class << self
     include Analytics::Configurable
-    include Analytics::OAuth
+    include Analytics::OAuth2
     
     def client
       @client ||= Analytics::Client.new(options.fetch(:default_access_token))
     end
 
     def from_token(oauth_token)
-       @client = Analytics::Client.new(access_token(oauth_token))
+       @client = Analytics::Client.new(oauth_token)
     end
 
   private

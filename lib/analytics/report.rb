@@ -15,7 +15,7 @@ module Analytics
 
     def initialize(id, access_token, renderer = Analytics::Renderer::Plain)
       @id = id
-      @access_token = Analytics.access_token(access_token)
+      @access_token = access_token
       @renderer = renderer
     end
 

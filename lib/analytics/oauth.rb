@@ -1,27 +1,25 @@
-require 'forwardable'
-require 'oauth2'
-module Analytics
-  module OAuth
-    extend Forwardable
+require "forwardable"
+require "oauth"
 
-    def oauth_client
-      @oauth_client ||= OAuth2::Client.new(
-        consumer_key, 
-        consumer_secret,
-        :site => 'https://accounts.google.com',
-        :authorize_url => '/o/oauth2/auth',
-        :token_url => '/o/oauth2/token'
-      )
+module Analytics
+  class OAuth
+    class << self
+    def oauth_consumer
+      @consumer ||= ::OAuth::Consumer.new(Analytics.consumer_key, Analytics.consumer_secret, {
+          :site => 'https://www.google.com',
+          :request_token_path => '/accounts/OAuthGetRequestToken',
+          :access_token_path => '/accounts/OAuthGetAccessToken',
+          :authorize_path => '/accounts/OAuthAuthorizeToken'
+        })
     end
 
-    def access_token(token, opts = {})
-      if token.nil?
-        raise Analytics::Error::NoAccessTokenProvided
-      elsif token.is_a? OAuth2::AccessToken
+    def access_token(token, secret = nil, opts = {})
+      if token.is_a? ::OAuth::AccessToken
         token
       else
-         OAuth2::AccessToken.new(oauth_client, token, opts)
+        ::OAuth::AccessToken.new(oauth_consumer, token, secret)
       end
+    end
     end
   end
 end
