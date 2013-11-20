@@ -19,6 +19,8 @@ module Analytics
       Analytics::Request.new(Analytics::BASE_URL, "management/accounts/#{@account_id}/webproperties/#{@id}/profiles", @access_token).response["items"].map do |item|
         Analytics::Profile.new(item, @access_token)
       end
+    rescue 
+      []
     end
   end  
 end

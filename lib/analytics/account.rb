@@ -21,6 +21,8 @@ module Analytics
       Analytics::Request.new(Analytics::BASE_URL, "management/accounts/#{@id}/webproperties", @access_token).response["items"].map do |item|
         Analytics::WebProperty.new(item, @access_token)
       end
+    rescue
+      []
     end
   end
 end

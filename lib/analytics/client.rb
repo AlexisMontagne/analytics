@@ -28,6 +28,8 @@ module Analytics
       Analytics::Request.new(Analytics::BASE_URL, 'management/accounts', @access_token).response["items"].map do |item|
         Analytics::Account.new(item, @access_token)
       end
+    rescue
+      []
     end
   end
 end
