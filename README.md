@@ -1,3 +1,5 @@
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/b9b735f530731e985ae3f291b84c4e63 "githalytics.com")](http://githalytics.com/AlexisMontagne/analytics)
+
 # Analytics
 
 TODO: Write a gem description
