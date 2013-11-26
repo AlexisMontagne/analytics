@@ -5,9 +5,9 @@ module Analytics
     def initialize(opts, access_token)
       @access_token = access_token
       @id = opts.fetch("id")
-      @name = opts.fetch("name")
+      @name = opts.fetch("name", "Not found")
       @account_id = opts.fetch("accountId")
-      @url = opts.fetch("websiteUrl")
+      @url = opts.fetch("websiteUrl", "Not found")
     end
 
     def profiles
@@ -17,8 +17,8 @@ module Analytics
   private
     def request_profiles
       Analytics::Request.new(Analytics::BASE_URL, "management/accounts/#{@account_id}/webproperties/#{@id}/profiles", @access_token).response["items"].map do |item|
-        Analytics::Profile.new(item, @access_token)
-      end
+        Analytics::Profile.new(item, @access_token) rescue nil
+      end.compact
     rescue 
       []
     end

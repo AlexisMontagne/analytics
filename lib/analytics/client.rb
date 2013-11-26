@@ -26,8 +26,8 @@ module Analytics
   private
     def request_accounts
       Analytics::Request.new(Analytics::BASE_URL, 'management/accounts', @access_token).response["items"].map do |item|
-        Analytics::Account.new(item, @access_token)
-      end
+        Analytics::Account.new(item, @access_token) rescue nil
+      end.compact
     rescue
       []
     end

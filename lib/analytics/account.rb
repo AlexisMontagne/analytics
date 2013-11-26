@@ -19,9 +19,9 @@ module Analytics
   private
     def request_web_properties
       Analytics::Request.new(Analytics::BASE_URL, "management/accounts/#{@id}/webproperties", @access_token).response["items"].map do |item|
-        Analytics::WebProperty.new(item, @access_token)
-      end
-    rescue
+        Analytics::WebProperty.new(item, @access_token) rescue nil
+      end.compact
+    rescue 
       []
     end
   end
