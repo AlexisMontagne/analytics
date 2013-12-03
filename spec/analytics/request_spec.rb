@@ -12,11 +12,15 @@ describe Analytics::Request do
 
   context ".request" do
     it "should return a string with datas" do
-       sample_request.request.should include('{"foo" => "bar"}')
+      VCR.use_cassette('assets.up-fluence') do
+        sample_request.request.should include('{"foo" => "bar"}')
+      end
     end
 
     it "should throw an error if the oauth token is wrong" do
-      expect { Analytics::Request.new(Analytics::BASE_URL, 'management/accounts', incorrect_token).request }.to raise_error(Analytics::Error::PermissionInsufficient)
+      VCR.use_cassette('assets.up-fluence/management/accounts') do
+        expect { Analytics::Request.new(Analytics::BASE_URL, 'management/accounts', incorrect_token).request }.to raise_error(Analytics::Error::PermissionInsufficient)
+      end
     end
   end
 
