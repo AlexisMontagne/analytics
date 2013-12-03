@@ -59,7 +59,8 @@ You can grab datas with a simple DSL
     report.visits_by_month(0, Time.now)
 
     # you can provide multiple metrics and dimensions as well
-    report.visists_and_visitors_by_month_and_city
+    report.visists_and_visitors_by_month_and_city(0, Time.now)
+
   
 ## Contributing
 
