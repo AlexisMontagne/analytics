@@ -1,8 +1,10 @@
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/b9b735f530731e985ae3f291b84c4e63 "githalytics.com")](http://githalytics.com/AlexisMontagne/analytics)
-
 # Analytics
 
-TODO: Write a gem description
+[![Build Status](https://travis-ci.org/AlexisMontagne/analytics.png?branch=master)](https://travis-ci.org/AlexisMontagne/analytics)
+[![Code Climate](https://codeclimate.com/repos/528d2778c7f3a335fa013259/badges/c4c17ae9f5591d5b5509/gpa.png)](https://codeclimate.com/repos/528d2778c7f3a335fa013259/feed)
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/b9b735f530731e985ae3f291b84c4e63 "githalytics.com")](http://githalytics.com/AlexisMontagne/analytics)
+
+A Ruby interface to the Google Analytics API.
 
 ## Installation
 
@@ -20,7 +22,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Authentification
+
+[TODO]  
+
+### Management
+
+[TODO]  
+
+### Reporting
+
+[TODO]  
 
 ## Contributing
 
