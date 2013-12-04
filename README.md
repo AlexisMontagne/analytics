@@ -36,7 +36,7 @@ Then you have to provide an access token ( OAuth or OAuth2 ) to manage or visual
     
 ### Management
 
-** You can access to the accounts, web properties and profile from a `Analytics::Client` 
+You can access to the accounts, web properties and profile from an `Analytics::Client` 
     
     client.accounts        # returns an array of Analytics::Account
     client.web_properties  # returns an array of Analytics::WebProperty
@@ -44,13 +44,13 @@ Then you have to provide an access token ( OAuth or OAuth2 ) to manage or visual
 
 ### Reporting
 
-From a `Analyics::Profile` you can access to the report object
+You can access the report object from an `Analytics::Profile` 
   
     profile.report
     # or 
-    Analyics::Report.new('profile_id', access_token) # access_token is a OAuth::AccessToken or  OAuth2::AccessToken
+    Analytics::Report.new('profile_id', access_token) # access_token is a OAuth::AccessToken or  OAuth2::AccessToken
 
-You can grab datas with a simple DSL
+You can grab data with a simple DSL
 
     report.visits(0, Time.now) # it should grab all visits from Jan 1st 1970 to now
     # you can provide all metrics from google analytics ( visitors, new_visits, percent_new_visits, ... )
