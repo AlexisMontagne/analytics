@@ -1,4 +1,4 @@
-require 'analytics'
+require 'analytics-rb'
 require 'coveralls'
 Coveralls.wear!
 

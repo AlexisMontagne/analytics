@@ -10,7 +10,7 @@ A Ruby interface to the Google Analytics API.
 
 Add this line to your application's Gemfile:
 
-    gem 'analytics-ruby'
+    gem 'analytics-rb'
 
 And then execute:
 
@@ -18,7 +18,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install analytics-ruby
+    $ gem install analytics-rb
 
 ## Usage
 
