@@ -1,7 +1,7 @@
-require 'analytics-rb'
 require 'coveralls'
 Coveralls.wear!
 
+require 'analytics-rb'
 require 'vcr'
 
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
