@@ -7,9 +7,18 @@ module Analytics
     end
 
     def request
-      access_token.get(full_path).body
-    rescue ::OAuth2::Error
-      raise Analytics::Error::PermissionInsufficient
+      retried = false
+      begin
+        access_token.get(full_path).body
+      rescue ::OAuth2::Error => e
+        # One of the 403 error code means that you already did 10 requests for a second
+        if e.code["error"] == 403 && !retried
+          sleep 1
+          retried = true
+          retry
+        end
+        raise Analytics::Error::PermissionInsufficient
+      end
     end
 
     def response
